@@ -1,0 +1,26 @@
+{
+  "name": "kitanda-frontend",
+  "version": "1.0.0",
+  "description": "market",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "local"
+  },
+  "keywords": [
+    "web",
+    "market",
+    "website"
+  ],
+  "author": "Patrício Andrade",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "express": "^4.18.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  }
+}
