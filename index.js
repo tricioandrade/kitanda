@@ -7,7 +7,7 @@ var cons = require('consolidate');
 // app.engine('html', cons.swig)
 // app.set('views', path.join(__dirname, './resources/views'));
 // app.set('view engine', 'html');
-
+app.use('/static', express.static(path.join(__dirname, 'public')));
 app.use('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'resources/views/') + '/index.html');
 });
