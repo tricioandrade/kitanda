@@ -1,15 +1,22 @@
 const express = require("express");
 const path  = require("path");
 const app = express();
-var cons = require('consolidate');
+const ejsLayout = require('express-ejs-layouts');
+
+
+app.use(express.static('public'));
+app.use('/css', express.static(path.join(__dirname, 'public/css')));
+app.use('/js', express.static(path.join(__dirname, 'public/js')));
 
 // view engine setup
-// app.engine('html', cons.swig)
-// app.set('views', path.join(__dirname, './resources/views'));
-// app.set('view engine', 'html');
-app.use('/static', express.static(path.join(__dirname, 'public')));
+
+app.set(ejsLayout)
+app.set('views', './resources/views');
+app.set('layout','./layouts/layout');
+app.set('view engine', 'ejs')
+
 app.use('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'resources/views/') + '/index.html');
+    res.render('index')
 });
 
 app.listen(8000)
